@@ -1,0 +1,16 @@
+<language-addon>
+    <addon-name>test-addon</addon-name>
+    <version>1.0</version>
+    <language-name>xul/html</language-name>
+    <depends>zul, zkbind</depends>
+    <component>
+        <component-name>enumcombobox</component-name>
+        <extends>combobox</extends>
+        <component-class>be.chillworld.components.EnumCombobox</component-class>
+    </component>
+    <component>
+        <component-name>activelabel</component-name>
+        <extends>label</extends>
+        <component-class>be.chillworld.components.ActiveLabel</component-class>
+    </component>
+</language-addon>
