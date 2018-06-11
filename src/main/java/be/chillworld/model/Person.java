@@ -5,6 +5,7 @@ package be.chillworld.model;
  * @author chillworld
  */
 public class Person implements IActive {
+    
     private String firstName, lastName;
     private boolean active = true;
 
@@ -42,7 +43,5 @@ public class Person implements IActive {
     @Override
     public String getLabel() {
         return lastName + " " + firstName;
-    }
-    
-    
+    }    
 }
