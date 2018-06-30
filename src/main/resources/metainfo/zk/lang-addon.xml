@@ -9,8 +9,8 @@
         <component-class>be.chillworld.components.EnumCombobox</component-class>
     </component>
     <component>
-        <component-name>activelabel</component-name>
+        <component-name>inuselabel</component-name>
         <extends>label</extends>
-        <component-class>be.chillworld.components.ActiveLabel</component-class>
+        <component-class>be.chillworld.components.InUseLabel</component-class>
     </component>
 </language-addon>

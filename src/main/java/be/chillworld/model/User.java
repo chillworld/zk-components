@@ -4,12 +4,12 @@ package be.chillworld.model;
  *
  * @author chillworld
  */
-public class Person implements IActive {
+public class User {
     
     private String firstName, lastName;
     private boolean active = true;
 
-    public Person(String firstName, String lastName) {
+    public User(String firstName, String lastName) {
         this.firstName = firstName;
         this.lastName = lastName;
     }
@@ -31,7 +31,6 @@ public class Person implements IActive {
         this.lastName = lastName;
     }
 
-    @Override
     public boolean isActive() {
         return active;
     }
@@ -41,7 +40,7 @@ public class Person implements IActive {
     }
     
     @Override
-    public String getLabel() {
+    public String toString() {
         return lastName + " " + firstName;
     }    
 }

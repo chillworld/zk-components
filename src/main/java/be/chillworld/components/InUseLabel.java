@@ -1,26 +1,26 @@
 package be.chillworld.components;
 
-import be.chillworld.model.IActive;
+import be.chillworld.model.AbstractCatalog;
 import org.zkoss.zul.Label;
 
 /**
  *
  * @author filip.cossaer
  */
-public class ActiveLabel extends Label {
+public class InUseLabel extends Label {
 
     private static final String INACTIVE_STYLE = "color:red;text-decoration:line-through;";
-    private IActive object;
+    private AbstractCatalog catalog;
     private String style;
 
-    public IActive getObject() {
-        return object;
+    public AbstractCatalog getCatalog() {
+        return catalog;
     }
 
-    public void setObject(IActive iActive) {
-        this.object = iActive;
-        if (iActive != null) {
-            super.setValue(iActive.getLabel());
+    public void setCatalog(AbstractCatalog catalog) {
+        this.catalog = catalog;
+        if (catalog != null) {
+            super.setValue(catalog.getCode() + " - " + catalog.getDescription());
         } else {
             super.setValue(null);
         }
@@ -35,12 +35,12 @@ public class ActiveLabel extends Label {
     @Override
     public void setStyle(String style) {
         this.style = style;
-        boolean extraStyle = object == null || !object.isActive();
+        boolean extraStyle = catalog == null || !catalog.isInUse();
         super.setStyle((style==null?"":style) +(extraStyle ? INACTIVE_STYLE : "")) ;
     }
 
     @Override
     public void setValue(String value) {
-        throw new UnsupportedOperationException("activelabel can't set value, please set label through the object attribute.");
+        throw new UnsupportedOperationException("inuselabel can't set value, please set label through the catalog attribute.");
     }
 }

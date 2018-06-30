@@ -8,6 +8,9 @@
                 <column/>
             </columns>
             <rows>
+                <row spans="2">
+                    <label value="EnumCombobox" style="font-weight: bold;"/>
+                </row>
                 <row>
                     <label value="With the use attribute"/>
                     <combobox selectedItem="@bind(vm.selectedColor)" enumClass="be.chillworld.model.enums.Color" use="be.chillworld.components.EnumCombobox"/>
@@ -16,13 +19,23 @@
                     <label value="defined as component"/>
                     <enumcombobox selectedItem="@bind(vm.selectedColor)" enumClass="be.chillworld.model.enums.Color" emptyValue="true"/>
                 </row>
+                <row spans="2">
+                    <label value="InUseLabel" style="font-weight: bold;"/>
+                </row>
                 <row>
                     <label value="With the use attribute"/>
-                    <label  object="@load(vm.person)" use="be.chillworld.components.ActiveLabel"/>
+                    <label catalog="@load(vm.country)" use="be.chillworld.components.InUseLabel"/>
                 </row>
                 <row>
                     <label value="defined as component"/>
-                    <activelabel object="@load(vm.person)" style="color:green;"/>
+                    <inuselabel catalog="@load(vm.continent)" style="color:green;"/>
+                </row>
+                <row spans="2">
+                    <label value="InUseLabel2" style="font-weight: bold;"/>
+                </row>
+                <row>
+                    <label value="With the use attribute"/>
+                    <label value="@load(vm.user)" inUse="@load(vm.user.active)" use="be.chillworld.components.InUseLabel2"/>
                 </row>
                 <row spans="2">
                     <button label="Switch active" onClick="@command('switchActive')"/>
